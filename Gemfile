@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 # RSpec is a testing tool for Ruby, created for behavior-driven 
 # development (BDD).
 gem 'rspec', '~> 3.6.0'
@@ -10,3 +9,6 @@ gem 'selenium-webdriver'
 # scenarios for user stories and automates web application testing 
 # for behavior-driven software development.
 gem 'capybara'
+# Easy installation and use of chromedriver-helper, that provides the HTTP API 
+# described by the WebDriver protocol to communicate with Chrome browser.
+gem 'chromedriver-helper'

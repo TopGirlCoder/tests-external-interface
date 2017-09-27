@@ -69,7 +69,7 @@ RSpec.describe User, type: :feature do
 				expect(URI.parse(current_url).to_s).to_not eq 'http://non-existent-site.com'
 			end 
 		end  
- 
+	
 		context 'with content' do
 
 			scenario 'should be true if page has content' do
@@ -135,7 +135,7 @@ RSpec.describe User, type: :feature do
 				expect(URI.parse(current_url).to_s).to_not eq('http://non-existent-site.com')
 			end 
 		end  
- 
+	
 		context 'with content' do
 
 			scenario 'should be true if page has content' do

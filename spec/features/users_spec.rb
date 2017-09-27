@@ -1,8 +1,6 @@
 require_relative '../spec_helper'
 require_relative 'user'
 
-# Capybara::Session.new :selenium_chrome
-
 RSpec.describe User, type: :feature do
 
   before(:all) { @user = User.new } 

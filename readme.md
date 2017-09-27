@@ -19,4 +19,4 @@ $ rspec --format documentation
 ```
 
 ## Gotchas
-* Requires a recent version of chrome to run tests.
+* Requires Chrome version 49 or newer to run tests.

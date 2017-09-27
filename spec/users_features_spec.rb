@@ -16,39 +16,39 @@ RSpec.describe User, type: :feature do
     end 
 
     it 'should be false if directs to page with given url' do
-      expect(URI.parse(current_url).to_s).to_not eq('http://non-existent-site.com')
+      expect(URI.parse(current_url).to_s).to_not eq 'http://non-existent-site.com'
     end 
  
 	  context 'has content' do
 
 		  it 'should be true if page has content' do
-	      expect(page).to have_content('Try Publicity.ai free')
+	      expect(page).to have_content 'Try Publicity.ai free'
 	    end 	  
 
 	    it 'should be false if page has given content' do
-	      expect(page).not_to have_content('non-existent-content')
+	      expect(page).not_to have_content 'non-existent-content'
 	    end 
 	  end
 
 	  context 'has button' do
 
 	    it 'should be true if sign up button to submit form is on page' do
-	      expect(page).to have_button('Start Analyzing »')
+	      expect(page).to have_button 'Start Analyzing »'
 	    end
 
-	    it "should be false if the given button is not on page" do
-	      expect(page).not_to have_button('non-existent-button')
+	    it 'should be false if the given button is not on page' do
+	      expect(page).not_to have_button 'non-existent-button'
 	    end 
 	  end  
 
 	  context 'has form' do
 	    
 	    it 'should be true if form to sign up is on page' do
-	      expect(page).to have_css('form#new_user')
+	      expect(page).to have_css 'form#new_user'
 	    end   
 
 	    it 'should be false if the given form to sign up is not on page' do
-	      expect(page).not_to have_css('form.non-existent-form')
+	      expect(page).not_to have_css 'form.non-existent-form'
 	    end  
     end
     
@@ -57,9 +57,9 @@ RSpec.describe User, type: :feature do
 	    it 'should be true if page has content' do
         @user.sign_up
 
-        expect(page).to have_content('Welcome! You have signed up successfully.')
-        expect(page).not_to have_link('Try It Free', href: '/users/sign_up')
-        expect(page).to have_link('Logout', href: '/users/sign_out')
+        expect(page).to have_content 'Welcome! You have signed up successfully.'
+        expect(page).not_to have_link 'Try It Free', href: '/users/sign_up'
+        expect(page).to have_link 'Logout', href: '/users/sign_out'
         expect(page).to have_no_css 'div.flash.error'	
       end  
 
@@ -76,7 +76,7 @@ RSpec.describe User, type: :feature do
 		before { visit '/users/sign_in' }
 
     it 'should be true if directs to page with url' do
-      expect(URI.parse(current_url).to_s).to eq('http://pai-test.herokuapp.com/users/sign_in')
+      expect(URI.parse(current_url).to_s).to eq 'http://pai-test.herokuapp.com/users/sign_in'
     end 
 
     it 'should be false if directs to page with given url' do
@@ -86,33 +86,33 @@ RSpec.describe User, type: :feature do
 	  context 'has content' do
 
 		  it 'should be true if page has content' do
-	      expect(page).to have_content('Log in')
+	      expect(page).to have_content 'Log in'
 	    end 	  
 
 	    it 'should be false if page has given content' do
-	      expect(page).not_to have_content('non-existent-content')
+	      expect(page).not_to have_content 'non-existent-content'
 	    end 
 	  end
 
 	  context 'has button' do
 
 	    it 'should be true if sign in button to submit form is on page' do
-	      expect(page).to have_button('Sign in')
+	      expect(page).to have_button 'Sign in'
 	    end
 
-	    it "should be false if the given button is not on page" do
-	      expect(page).not_to have_button('non-existent-button')
+	    it 'should be false if the given button is not on page' do
+	      expect(page).not_to have_button 'non-existent-button'
 	    end 
 	  end  
 
 	  context 'has form' do
 	    
 	    it 'should be true if form to sign in is on page' do
-	      expect(page).to have_css('form#new_user')
+	      expect(page).to have_css 'form#new_user'
 	    end   
 
 	    it 'should be false if the given form to sign in is not on page' do
-	      expect(page).not_to have_css('form.non-existent-form')
+	      expect(page).not_to have_css 'form.non-existent-form'
 	    end  
     end 
     
@@ -129,14 +129,11 @@ RSpec.describe User, type: :feature do
       end	
 
       it 'should be true if page has link' do
-      	name = @user.class
-      	p name
-      	p @user
-        expect(page).to have_link(@user.first_name, href: '/users/edit')
+        expect(page).to have_link @user.first_name, href: '/users/edit'
       end 
 
       it 'should be false if page has given link' do
-        expect(page).to have_button('Sign in')
+        expect(page).to have_button 'Sign in'
       end	
 
       it 'should be true if page has no errors' do
@@ -159,11 +156,11 @@ RSpec.describe User, type: :feature do
 	    	@user.sign_in
 	    	@user.sign_out
 
-	      expect(page).to have_link('Try It Free', href: '/users/sign_up')
+	      expect(page).to have_link 'Try It Free', href: '/users/sign_up'
 	    end  
 
 	    it 'should be false if page has link' do
-        expect(page).to_not have_link('Logout', href: "/users/sign_out")
+        expect(page).to_not have_link 'Logout', href: '/users/sign_out'
 	    end 
 	        
 	    it 'should be true if page has no errors' do  
@@ -175,4 +172,5 @@ RSpec.describe User, type: :feature do
 	    end 
 	  end
 	end      
-end  
+end 
+

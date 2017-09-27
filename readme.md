@@ -1,5 +1,5 @@
 # user-tests 
-* Achieved 100% coverage of sign in, sign up, and sign out codebase by writing tests utilizing RSpec, Capybara and Selenium to exclusively test remote url.
+* Achieved 100% coverage of sign in, sign up, and sign out codebase by writing tests utilizing RSpec, Capybara and Selenium to exclusively test remote url
 
 ## Project Summary
 * Technologies: Ruby 2.4.2
@@ -19,4 +19,4 @@ $ rspec --format documentation
 ```
 
 ## Gotchas
-* Requires Chrome version 49 or newer to run tests.
+* Requires Chrome version 49 or newer to run tests

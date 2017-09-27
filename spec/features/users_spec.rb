@@ -57,7 +57,6 @@ RSpec.describe User, type: :feature do
   end 
 
   context 'given sign up page' do
-
     before { visit '/users/sign_up' }
 
     context 'with url' do
@@ -124,7 +123,6 @@ RSpec.describe User, type: :feature do
   end
 
   context 'given sign in page' do
-
     before { visit '/users/sign_in' }
 
     context 'with url' do
@@ -202,7 +200,6 @@ RSpec.describe User, type: :feature do
   end  
 
   context 'given sign out link' do 
-
     before { visit '/users/sign_in' }
 
     context 'with successful sign out' do 

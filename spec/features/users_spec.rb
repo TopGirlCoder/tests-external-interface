@@ -7,7 +7,7 @@ RSpec.describe User, type: :feature do
 
   before(:all) { @user = User.new } 
 
-  context 'root page' do
+  feature 'Visiting the root page' do
     before { visit '/' }
 
     scenario 'should be true if navigates to root page' do
@@ -44,7 +44,7 @@ RSpec.describe User, type: :feature do
     end    
   end 
 
-  context 'sign up' do
+  feature 'Signing up' do
     before { visit '/users/sign_up' }
 
     scenario 'should be true if directs to page with url' do
@@ -93,7 +93,7 @@ RSpec.describe User, type: :feature do
     end        
   end
 
-  context 'sign in' do
+  feature 'Signing in' do
     before { visit '/users/sign_in' }
 
     scenario 'should be true if directs to page with url' do
@@ -155,7 +155,7 @@ RSpec.describe User, type: :feature do
     end 
   end  
 
-  context 'sign out' do 
+  feature 'Signing out' do 
     before { visit '/users/sign_in' }
 
     scenario 'should be true if page has link' do

@@ -18,9 +18,8 @@ Run tests:
 $ rspec --format documentation
 ```
 
-## Gotchas
-* Requires Chrome version 49 or newer to run tests
-
 ## Test Output
 ![user_tests](./assets/user_tests.png)
 
+## Notes
+* Requires Chrome version 49 or newer to run tests

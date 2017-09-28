@@ -4,6 +4,7 @@ require_relative '../user'
 RSpec.feature User, type: :feature do
 
   before(:all) { @user = User.new(first_name: 'test', last_name: 'test', phone_number: '4155551234', email: "#{Random.rand(1000)}@test#{Random.rand(1000)}.com", password: '12345678') } 
+  before(:all) { @user_valid = User.new(first_name: 'test', last_name: 'test', phone_number: '4155551234', email: 'valid@test.com', password: '12345678') } 
   before(:all) { @user_invalid_email = User.new(first_name: 'test', last_name: 'test', phone_number: '4155551234', email: 'test', password: '12345678') } 
   before(:all) { @user_invalid_password = User.new(first_name: 'test', last_name: 'test', phone_number: '4155551234', email: "#{Random.rand(1000)}@test#{Random.rand(1000)}.com", password: '123') } 
 
@@ -97,18 +98,17 @@ RSpec.feature User, type: :feature do
     end    
      
     scenario 'with valid email and password' do
-      @user.sign_in
+      @user_valid.sign_in
       expect(page).to have_content 'Signed in successfully.'
       expect(page).to have_link @user.first_name, href: '/users/edit'
       expect(page).not_to have_content 'Not signed in successfully.'
       expect(page).not_to have_button 'Sign in'
-      expect(page).not_to have_css 'flash.error'
     end  
 
-    # scenario 'with invalid email' do
-    #   @user_invalid_email.sign_in
-    #   expect(page).to have_css 'flash.alert'
-    # end 
+    scenario 'with invalid email' do
+      @user_invalid_email.sign_in 
+      expect(page).not_to have_content 'Signed in successfully.'
+    end 
 
     scenario 'with invalid password' do
       @user_invalid_password.sign_in
@@ -120,12 +120,12 @@ RSpec.feature User, type: :feature do
     before { visit '/users/sign_in' }
 
     scenario 'with link' do
-      @user.sign_in
+      @user_valid.sign_in
       expect(page).to have_link 'Logout', href: '/users/sign_out'            
     end 
 
-    scenario 'and signs out' do
-      @user.sign_out
+    scenario 'signs out' do
+      @user_valid.sign_out
       expect(page).to have_link 'Try It Free', href: '/users/sign_up'
       expect(page).to_not have_link 'Logout', href: '/users/sign_out'
       expect(page).to have_no_css 'div.flash.error'

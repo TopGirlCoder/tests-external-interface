@@ -13,6 +13,7 @@ class User
   end	
 
   def sign_up
+    visit '/users/sign_up'
     within 'form#new_user' do
       fill_in 'First name', with: @first_name
       fill_in 'Last name', with: @last_name
@@ -27,6 +28,7 @@ class User
   end	
 
   def sign_in
+    visit '/users/sign_in'
     within 'form#new_user' do
       fill_in 'Email', with: @email
       fill_in 'Password', with: @password

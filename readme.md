@@ -22,4 +22,4 @@ $ rspec --format documentation
 * Requires Chrome version 49 or newer to run tests
 
 ## Test Output
-![user_tests](./surveys.png)
+![user_tests](surveys.png)

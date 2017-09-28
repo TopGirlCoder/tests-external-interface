@@ -23,3 +23,4 @@ $ rspec --format documentation
 
 ## Test Output
 ![user_tests](./assets/user_tests.png)
+

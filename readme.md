@@ -14,14 +14,13 @@ $ bundle install
 
 Run tests: 
 
-
-Use the progress formatter which generates '.' represents a passing example, 'F' is failing, and '*' is pending:
+* Use the progress formatter (generates '.' which represents a passing example, 'F' is failing, and '*' is pending):
 
 ```
 $ rspec --format
 ```
 
-Use the documentation formatter to see the documentation strings passed to
+* Use the documentation formatter to see the documentation strings passed to
 describe, it, and their aliases:
 
 ```

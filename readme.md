@@ -1,4 +1,4 @@
-# user-tests 
+# tests-external-interface 
 * Achieved 100% coverage of sign in, sign up, and sign out codebase by writing feature specs utilizing RSpec, Capybara and Selenium to exclusively test external interface.
 
 ## Project Summary
